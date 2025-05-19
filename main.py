@@ -1,4 +1,5 @@
 import stats
+import sys
 
 def get_book_text(path_to_file:str):
     with open(path_to_file) as f:
@@ -19,7 +20,12 @@ def print_report(path_to_file):
     for i in list_num_words:
         print(f"{i["name"]}: {i["num"]}")
     print("============= END ===============")
+    return 0
 def main():
-    print_report(path_to_file="books/frankenstein.txt")
+    if len(sys.argv) > 1:
+        print_report(path_to_file=sys.argv[1])
+    else:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     
 main()
