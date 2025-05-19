@@ -1,2 +1,6 @@
+# the temperary files
+__pycache__
 # ignore all the /books directory
 /books
+
+
